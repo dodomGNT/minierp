@@ -5,6 +5,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Modern Dark Dashboard - Bootstrap 5.3</title>
+        <link rel="icon" type="image/png" href="../assets/images/favicon.png">
         <link rel="stylesheet" href="../assets/bootstrap.min.css">
         <link rel="stylesheet" href="../assets/bootstrap-icons.min.css">
         <script src="../assets/sweetalert2@11.js"></script>
@@ -20,7 +21,7 @@
                 <div class="ms-auto d-flex align-items-center">
                     <div class="dropdown">
                         <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src="https://ui-avatars.com/api/?name=Admin+User&background=0D6EFD&color=fff" alt="mdo" width="32" height="32" class="rounded-circle me-2">
+                            <img src="../assets/images/unknown.png" alt="mdo" width="32" height="32" class="rounded-circle me-2">
                             <span class="d-none d-sm-inline">Admin User</span>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end shadow">
