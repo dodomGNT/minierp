@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 text: 'Mohon tunggu sejenak',
                 allowOutsideClick: false,
                 showConfirmButton: false,
-                background: '#1a1a1a',
+                background: '#383737',
                 color: '#fff',
                 didOpen: () => { Swal.showLoading(); }
             });
@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             text: data.message,
                             timer: 1500,
                             showConfirmButton: false,
-                            background: '#1a1a1a',
+                            background: '#383737',
                             color: '#fff'
                         }).then(() => window.location.href = '../dashboard');
                     } else {
@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             icon: 'error',
                             title: 'Akses Ditolak',
                             text: data.message,
-                            background: '#1a1a1a',
+                            background: '#383737',
                             color: '#fff'
                         });
                         // Update captcha
@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 }, 1000);
             })
             .catch(error => {
-                Swal.fire({ icon: 'error', title: 'Error', text: 'Koneksi terputus.', background: '#1a1a1a', color: '#fff' });
+                Swal.fire({ icon: 'error', title: 'Error', text: 'Koneksi terputus.', background: '#383737', color: '#fff' });
             });
         });
     }
@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function () {
             text: 'Sesi Anda telah berakhir dengan aman.',
             timer: 2000,
             showConfirmButton: false,
-            background: '#1a1a1a',
+            background: '#383737',
             color: '#fff'
         });
         window.history.replaceState({}, document.title, window.location.pathname);
@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', function () {
             icon: 'warning',
             title: 'Sesi Tidak Aman',
             text: 'Terdeteksi perubahan perangkat atau browser. Silakan login kembali.',
-            background: '#1a1a1a',
+            background: '#383737',
             color: '#fff'
         });
         window.history.replaceState({}, document.title, window.location.pathname);

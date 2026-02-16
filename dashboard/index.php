@@ -9,7 +9,7 @@
                     <li class="breadcrumb-item active text-light">Dashboard</li>
                 </ol>
             </nav>
-            <div class="card border-0 shadow-sm p-4 mb-4">
+            <div class="card border-0 shadow-sm p-2 mb-2">
                 <h3 class="text-info">Selamat Datang di Panel Kontrol</h3>
                 <p class="text-secondary">Dashboard ini sekarang menggunakan Dark Mode default. Sidebar dan Footer tetap pada posisinya (sticky) saat konten ditarik ke bawah.</p>
             </div>

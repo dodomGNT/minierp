@@ -15,7 +15,7 @@ document.querySelector('#logoutBtn').addEventListener('click', function(e) {
         cancelButtonColor: '#333',
         confirmButtonText: 'Ya, Logout!',
         cancelButtonText: 'Batal',
-        background: '#1a1a1a',
+        background: '#383737',
         color: '#fff'
     }).then((result) => {
         if (result.isConfirmed) {
@@ -26,7 +26,7 @@ document.querySelector('#logoutBtn').addEventListener('click', function(e) {
                 text: 'Mohon tunggu sejenak',
                 allowOutsideClick: false,
                 showConfirmButton: false,
-                background: '#1a1a1a',
+                background: '#383737',
                 color: '#fff',
                 didOpen: () => {
                     Swal.showLoading();
