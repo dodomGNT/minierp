@@ -1,8 +1,13 @@
 <?php
+// Masukkan file class database tadi (asumsi namanya CoreDatabase.php)
+require_once('../core_database.php');
+
 // 1. Logika untuk Request AJAX (POST)
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_SERVER['HTTP_X_REQUESTED_WITH'])) {
     header('Content-Type: application/json');
     
+    $db = new CoreDatabase();
+
     $email = $_POST['email'] ?? '';
     $password = $_POST['password'] ?? '';
     $user_captcha = $_POST['captcha_input'] ?? '';
@@ -14,17 +19,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_SERVER['HTTP_X_REQUESTED_WIT
     if ($user_captcha != $correct_ans) {
         $response = ["status" => "error", "message" => "Jawaban keamanan salah!"];
     } else {
-        // Jika Captcha benar, baru cek Email & Password
-        if ($email == "admin@mail.com" && $password == "admin123") {
-            session_regenerate_id(true);
-            $_SESSION['user_logged_in'] = true;
-            $_SESSION['user_email'] = $email;
+        // 2. Cari User menggunakan class CoreDatabase
+        $db->query("SELECT * FROM users WHERE email = :email");
+        $db->bind(':email', $email);
+        $user = $db->single();
 
-            // SIMPAN SIDIK JARI BROWSER
-            $_SESSION['user_agent'] = $_SERVER['HTTP_USER_AGENT'];
+        if ($user) {
+            // 3. Verifikasi Password (asumsi pakai password_hash)
+            if (password_verify($password, $user->password)) {
+                session_regenerate_id(true);
+                $_SESSION['user_logged_in'] = true;
+                $_SESSION['user_email'] = $user->email;
 
-            $response = ["status" => "success", "message" => "Berhasil masuk!"];
+                // SIMPAN SIDIK JARI BROWSER
+                $_SESSION['user_agent'] = $_SERVER['HTTP_USER_AGENT'];
+
+                $response = ["status" => "success", "message" => "Berhasil masuk!"];
+            } else {
+                echo json_encode(['status' => 'error', 'message' => 'Password salah!']);
+            }
         } else {
+            // Jika user tidak ditemukan, tetap beri response error yang sama
+            // untuk menghindari informasi tentang keberadaan email
             $response = ["status" => "error", "message" => "Email atau password salah!"];
         }
     }

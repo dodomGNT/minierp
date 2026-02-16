@@ -24,9 +24,6 @@
                         <div class="mb-3">
                             <label class="form-label small text-secondary">Alamat Email Terdaftar</label>
                             <div class="input-group">
-                                <span class="input-group-text bg-dark border-secondary text-secondary">
-                                    <i class="bi bi-envelope"></i>
-                                </span>
                                 <input type="email" name="email" class="form-control" placeholder="nama@email.com" required>
                             </div>
                         </div>

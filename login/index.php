@@ -24,15 +24,14 @@
                         <div class="mb-3">
                             <label class="form-label small text-secondary">Alamat Email</label>
                             <div class="input-group">
-                                <span class="input-group-text bg-dark border-secondary text-secondary"><i class="bi bi-envelope"></i></span>
-                                <input type="email" name="email" class="form-control" placeholder="admin@mail.com" value="admin@mail.com" required>
+                                <input type="email" name="email" class="form-control" placeholder="admin@mail.com" value="dhodhom@gmail.com" required>
                             </div>
                         </div>
                         <div class="mb-2">
                             <label class="form-label small text-secondary">Password</label>
                             <div class="input-group">
-                                <span class="input-group-text bg-dark border-secondary text-secondary"><i class="bi bi-lock"></i></span>
-                                <input type="password" name="password" class="form-control" id="password" value="admin123" required>
+                                
+                                <input type="password" name="password" class="form-control" id="password" value="5YHKVZTA" required>
                                 <button class="btn btn-outline-secondary border-secondary" type="button" id="togglePassword">
                                     <i class="bi bi-eye" id="eyeIcon"></i>
                                 </button>
