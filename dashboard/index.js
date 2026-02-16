@@ -1,8 +1,8 @@
 function toggleSidebar() {
-            document.getElementById('sidebarMain').classList.toggle('show');
-        }
+    document.getElementById('sidebarMain').classList.toggle('show');
+}
 
-        document.querySelector('#logoutBtn').addEventListener('click', function(e) {
+document.querySelector('#logoutBtn').addEventListener('click', function(e) {
     e.preventDefault();
 
     // 1. Popup Konfirmasi

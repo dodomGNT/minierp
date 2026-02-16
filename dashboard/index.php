@@ -1,5 +1,5 @@
-<?php require_once('header.php'); ?>
-<?php require_once('sidebar.php'); ?>
+<?php require_once('header_8js5g7e.php'); ?>
+<?php require_once('sidebar_9d62hs7a.php'); ?>
         <div class="main-content px-4">
             <div class="row">
                 <div class="col-12">
@@ -103,4 +103,4 @@
                 </div>
             </div>
         </div>
-<?php require_once('footer.php'); ?>
+<?php require_once('footer_3j7d9s8u.php'); ?>

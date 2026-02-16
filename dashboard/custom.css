@@ -1,80 +1,80 @@
 :root {
-            --sidebar-width: 250px;
-            --topbar-height: 56px;
-            --footer-height: 50px;
-        }
+    --sidebar-width: 250px;
+    --topbar-height: 56px;
+    --footer-height: 50px;
+}
 
-        body {
-            overflow-x: hidden;
-            /* Background gelap yang sedikit lebih terang dari hitam murni */
-            background-color: #121212; 
-        }
+body {
+    overflow-x: hidden;
+    /* Background gelap yang sedikit lebih terang dari hitam murni */
+    background-color: #121212; 
+}
 
-        /* 1. STICKY TOPBAR */
-        .navbar {
-            height: var(--topbar-height);
-            z-index: 1030;
-            border-bottom: 1px solid #333; /* Tambah border bawah tipis */
-        }
+/* 1. STICKY TOPBAR */
+.navbar {
+    height: var(--topbar-height);
+    z-index: 1030;
+    border-bottom: 1px solid #333; /* Tambah border bawah tipis */
+}
 
-        /* 2. STICKY & SCROLLABLE SIDEBAR */
-        .sidebar {
-            width: var(--sidebar-width);
-            height: calc(100vh - var(--topbar-height));
-            position: fixed;
-            top: var(--topbar-height);
-            left: 0;
-            overflow-y: auto;
-            /* Sidebar warna gelap */
-            background-color: #1a1a1a;
-            border-right: 1px solid #333;
-            transition: all 0.3s;
-            z-index: 1000;
-        }
+/* 2. STICKY & SCROLLABLE SIDEBAR */
+.sidebar {
+    width: var(--sidebar-width);
+    height: calc(100vh - var(--topbar-height));
+    position: fixed;
+    top: var(--topbar-height);
+    left: 0;
+    overflow-y: auto;
+    /* Sidebar warna gelap */
+    background-color: #1a1a1a;
+    border-right: 1px solid #333;
+    transition: all 0.3s;
+    z-index: 1000;
+}
 
-        /* Nav-link sidebar agar kontras di dark mode */
-        .sidebar .nav-link {
-            color: #adb5bd;
-        }
-        .sidebar .nav-link:hover {
-            color: #fff;
-            background-color: rgba(255,255,255,0.05);
-        }
-        .sidebar .nav-link.active {
-            color: #fff;
-            background-color: #0d6efd;
-        }
+/* Nav-link sidebar agar kontras di dark mode */
+.sidebar .nav-link {
+    color: #adb5bd;
+}
+.sidebar .nav-link:hover {
+    color: #fff;
+    background-color: rgba(255,255,255,0.05);
+}
+.sidebar .nav-link.active {
+    color: #fff;
+    background-color: #0d6efd;
+}
 
-        /* 3. MAIN CONTENT AREA */
-        .main-content {
-            margin-left: var(--sidebar-width);
-            padding-top: 20px;
-            min-height: calc(100vh - var(--topbar-height) - var(--footer-height));
-        }
+/* 3. MAIN CONTENT AREA */
+.main-content {
+    margin-left: var(--sidebar-width);
+    padding-top: 20px;
+    min-height: calc(100vh - var(--topbar-height) - var(--footer-height));
+}
 
-        /* 4. STICKY FOOTER */
-        footer {
-            margin-left: var(--sidebar-width);
-            height: var(--footer-height);
-            background: #1a1a1a;
-            border-top: 1px solid #333;
-            display: flex;
-            align-items: center;
-            padding: 0 20px;
-        }
+/* 4. STICKY FOOTER */
+footer {
+    margin-left: var(--sidebar-width);
+    height: var(--footer-height);
+    background: #1a1a1a;
+    border-top: 1px solid #333;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+}
 
-        /* Custom Scrollbar agar tidak terlalu terang */
-        .sidebar::-webkit-scrollbar { width: 5px; }
-        .sidebar::-webkit-scrollbar-thumb { background: #333; border-radius: 10px; }
+/* Custom Scrollbar agar tidak terlalu terang */
+.sidebar::-webkit-scrollbar { width: 5px; }
+.sidebar::-webkit-scrollbar-thumb { background: #333; border-radius: 10px; }
 
-        /* Responsive */
-        @media (max-width: 768px) {
-            .sidebar { margin-left: calc(-1 * var(--sidebar-width)); }
-            .main-content, footer { margin-left: 0; }
-            .sidebar.show { margin-left: 0; }
-        }
+/* Responsive */
+@media (max-width: 768px) {
+    .sidebar { margin-left: calc(-1 * var(--sidebar-width)); }
+    .main-content, footer { margin-left: 0; }
+    .sidebar.show { margin-left: 0; }
+}
 
-        /* Rotasi Ikon Panah saat Menu Terbuka */
+/* Rotasi Ikon Panah saat Menu Terbuka */
 .nav-link[aria-expanded="true"] .bi-chevron-right {
     transform: rotate(90deg);
 }

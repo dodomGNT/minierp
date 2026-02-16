@@ -12,6 +12,9 @@
             </a>
             <div class="collapse" id="projectSubmenu">
                 <ul class="nav-submenu">
+                    <?php for($i=0; $i<=20; $i++){ ?>
+                        <li><a href="#" class="nav-link"><i class="bi bi-dot"></i> Project <?php echo chr(65+$i); ?></a></li>
+                    <?php } ?>
                     <li><a href="#" class="nav-link"><i class="bi bi-dot"></i> Project A</a></li>
                     <li><a href="#" class="nav-link"><i class="bi bi-dot"></i> Project B</a></li>
                     <li><a href="#" class="nav-link"><i class="bi bi-dot"></i> Project C</a></li>
