@@ -1,6 +1,7 @@
 <!-- HEADER -->
 <?php //require_once('header.php'); ?>
 <?php require_once('../auth_check.php'); ?>
+<?php include_once('actions.php'); ?>
 <!DOCTYPE html>
 <html lang="id" data-bs-theme="dark">
     <head>
@@ -13,33 +14,6 @@
         <script src="../assets/sweetalert2@11.js"></script>
         
         <style>
-            /* Header & Footer Sticky transparan */
-            .modal-header, .modal-footer {
-                background-color: rgba(33, 37, 41, 0.9) !important; /* Semi transparan */
-                backdrop-filter: blur(8px); /* Efek blur kaca */
-                z-index: 10;
-            }
-
-            /* Biar input yang melayang lebih smooth */
-            .form-floating > label {
-                transition: all 0.2s ease-in-out;
-            }
-
-            /* Fokus input biar lebih "Gemini" (Warna Info) */
-            .form-control:focus {
-                border-color: #0dcaf0 !important;
-                box-shadow: 0 0 0 0.25rem rgba(13, 202, 240, 0.15) !important;
-            }
-
-            /* Custom Scrollbar lebih tipis */
-            .custom-scrollbar::-webkit-scrollbar {
-                width: 4px;
-            }
-            .custom-scrollbar::-webkit-scrollbar-thumb {
-                background: #495057;
-                border-radius: 10px;
-            }
-
             /* Menyesuaikan Floating Label saat Dark Mode */
             .form-floating > .form-control:focus, 
             .form-floating > .form-control:not(:placeholder-shown) {
@@ -158,92 +132,6 @@
                 </nav>
             </div>
         </div>
-
-        <div class="modal fade" id="modalTambahData" tabindex="-1" aria-hidden="true">
-            <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
-                <div class="modal-content bg-dark border-secondary shadow-lg">
-                    
-                    <div class="modal-header border-secondary bg-dark shadow-sm">
-                        <h5 class="modal-title text-info fw-bold">
-                            <i class="bi bi-pencil-square me-2"></i>Form Input Data Proyek
-                        </h5>
-                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-
-                    <div class="modal-body p-4 custom-scrollbar">
-                        <form id="formTambahProyek">
-                            
-                            <div class="mb-4">
-                                <h6 class="text-uppercase fs-7 fw-bold text-secondary mb-3 opacity-75">Informasi Dasar</h6>
-                                <div class="row g-3">
-                                    <div class="col-md-8">
-                                        <div class="form-floating mb-3">
-                                            <input type="text" class="form-control bg-dark text-white border-secondary" id="floatNama" placeholder="Nama Proyek">
-                                            <label for="floatNama">Nama Lengkap Proyek</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="form-floating mb-3">
-                                            <input type="date" class="form-control bg-dark text-white border-secondary" id="floatTgl" placeholder="Tanggal">
-                                            <label for="floatTgl">Tanggal Mulai</label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="mb-4">
-                                <h6 class="text-uppercase fs-7 fw-bold text-secondary mb-3 opacity-75">Detail Teknis</h6>
-                                <div class="row g-3">
-                                    <div class="col-md-6">
-                                        <div class="form-floating mb-3">
-                                            <select class="form-select bg-dark text-white border-secondary" id="floatStatus" aria-label="Status">
-                                                <option selected disabled>Pilih Status...</option>
-                                                <option value="1">Pending</option>
-                                                <option value="2">Approved</option>
-                                                <option value="3">Rejected</option>
-                                            </select>
-                                            <label for="floatStatus">Status Proyek</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-floating mb-3">
-                                            <input type="number" class="form-control bg-dark text-white border-secondary" id="floatBudget" placeholder="Budget">
-                                            <label for="floatBudget">Estimasi Budget (Rp)</label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="mb-2">
-                                <h6 class="text-uppercase fs-7 fw-bold text-secondary mb-3 opacity-75">Catatan Tambahan</h6>
-                                <div class="form-floating">
-                                    <textarea class="form-control bg-dark text-white border-secondary" placeholder="Tulis deskripsi..." id="floatDesc" style="height: 120px"></textarea>
-                                    <label for="floatDesc">Deskripsi Singkat Kendala/Catatan</label>
-                                </div>
-                            </div>
-                            <?php for($i=0; $i<=5; $i++){ ?>
-                            <div class="mb-2">
-                                <div class="form-floating">
-                                    <textarea class="form-control bg-dark text-white border-secondary" placeholder="Tulis deskripsi..." id="floatDesc" style="height: 120px"></textarea>
-                                    <label for="floatDesc">Deskripsi Singkat Kendala/Catatan</label>
-                                </div>
-                            </div>
-                            <?php } ?>
-
-                        </form>
-                    </div>
-
-                    <div class="modal-footer border-secondary bg-dark shadow-lg">
-                        <button type="button" class="btn btn-link text-secondary text-decoration-none me-auto" data-bs-dismiss="modal">Batalkan</button>
-                        <button type="submit" form="formTambahProyek" class="btn btn-info text-white px-4 py-2 fw-bold">
-                            <i class="bi bi-cloud-arrow-up-fill me-2"></i>Simpan Perubahan
-                        </button>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
         <script src="../assets/bootstrap.bundle.min.js"></script>
         <script>
             document.getElementById('formTambahProyek').addEventListener('submit', function(e) {
